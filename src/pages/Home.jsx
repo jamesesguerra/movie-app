@@ -26,7 +26,7 @@ const Home = () => {
             <CarouselTitle title={'Now Showing'} />
             <Carousel />
 
-            <CarouselTitle title={'Upcoming'} />
+            <CarouselTitle title={'Coming Soon'} />
             <Carousel />
 
             <CarouselTitle title={'Top-rated'} />

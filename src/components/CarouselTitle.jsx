@@ -1,8 +1,8 @@
-import React from 'react'
+import { Link } from "react-router-dom"
 
 const CarouselTitle = ({ title }) => {
   return (
-    <h2 className='text-2xl py-4'>{ title }</h2>
+    <h2 className='text-2xl py-4'>{ title } <Link><span className="link link-hover link-primary text-base pl-2">View All</span></Link></h2>
   )
 }
 

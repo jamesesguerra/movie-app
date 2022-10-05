@@ -10,22 +10,22 @@ const PrivateNavbar = () => {
           </label>
           <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <Link>Home</Link>
+              <Link to='/home'>Home</Link>
             </li>
             <li>
-              <Link>My Lists</Link>
+              <Link to='/lists'>My Lists</Link>
             </li>
             <li>
-              <Link>Now Showing</Link>
+              <Link to='/popular'>Popular</Link>
             </li>
             <li>
-              <Link>Upcoming</Link>
+              <Link to='/now-showing'>Now Showing</Link>
             </li>
             <li>
-              <Link>Popular</Link>
+              <Link to='/coming-soon'>Coming Soon</Link>
             </li>
             <li>
-              <Link>Top-Rated</Link>
+              <Link to='/top-rated'>Top-Rated</Link>
             </li>
           </ul>
         </div>

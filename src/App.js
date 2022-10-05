@@ -10,7 +10,13 @@ import Template from './pages/Template';
 import Landing from './pages/Landing';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Register from './pages/Register'
+import Register from './pages/Register';
+import ListList from './pages/ListList';
+import Popular from './pages/Popular';
+import NowShowing from './pages/NowShowing';
+import ComingSoon from './pages/ComingSoon';
+import TopRated from './pages/TopRated';
+import NotFound from './pages/NotFound';
 
 const ProtectedRoute = ({ user, children }) => {
   if (!user) return <Navigate to="/" replace />
@@ -23,7 +29,7 @@ const ProtectedRoute = ({ user, children }) => {
 }
 
 function App() {
-  const [user] = useState(true)
+  const [user, setUser] = useState('j')
 
   return (
     <div className="App" data-theme='garden'>
@@ -35,7 +41,13 @@ function App() {
         </Route>
         <Route element={<ProtectedRoute user={user} />}>
           <Route path='home' element={<Home />} />
+          <Route path='lists' element={<ListList />} />
+          <Route path='popular' element={<Popular />} />
+          <Route path='now-showing' element={<NowShowing />} />
+          <Route path='coming-soon' element={<ComingSoon />} />
+          <Route path='top-rated' element={<TopRated />} />
         </Route>
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
   );

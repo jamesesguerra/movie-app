@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom"
 
-const PrivateNavbar = () => {
+const PrivateNavbar = ({ user, setUser }) => {
+
+  const handleLogout = () => {
+    setUser('');
+  }
+
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50">
       <div className="flex-0">
@@ -26,6 +31,10 @@ const PrivateNavbar = () => {
             </li>
             <li>
               <Link to='/top-rated'>Top-Rated</Link>
+            </li>
+            <hr className="my-2 h-px bg-slate-300 border-0" />
+            <li>
+              <Link to='/' onClick={handleLogout}>Sign out</Link>
             </li>
           </ul>
         </div>

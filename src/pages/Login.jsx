@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom"
 
-const Login = () => {
+const Login = ({ setUser }) => {
+    const handleLogin = () => {
+        console.log('hello')
+        setUser('james');
+    }
+
   return (
     <div className="grid h-screen place-items-center">
         <div>
@@ -18,11 +23,11 @@ const Login = () => {
                 </label>
                 <input type="text" placeholder="password" className="input input-bordered" />
                 <label className="label">
-                    <p className="label-text-alt">Don't have an account? <Link to="/register" className="link link-hover link-secondary">Sign up here</Link></p>
+                    <p className="label-text-alt">Don't have an account? <Link to="/register" className="link link-hover link-primary">Sign up here</Link></p>
                 </label>
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn btn-primary">Login</button>
+                    <button className="btn btn-primary" onClick={handleLogin}>Sign in</button>
                 </div>
             </div>
             </div>

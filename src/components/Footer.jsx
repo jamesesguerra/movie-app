@@ -8,7 +8,7 @@ const Footer = () => {
             <p className="font-bold">
             Lorem Ipsum Dolor <br />Providing reliable tech since 1992
             </p> 
-            <p>Copyright © 2022 - All right reserved</p>
+            <p>Made with ♡ by james</p>
         </div> 
     </footer>
   )

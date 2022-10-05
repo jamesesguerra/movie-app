@@ -34,9 +34,14 @@ const PrivateNavbar = () => {
       <div className="flex-1">
         <Link to="/home" className="btn btn-ghost normal-case text-xl">private</Link>
       </div>
-      <div className="form-control">
+      <div className="form-control mr-4">
         <input type="text" placeholder="Search" className="input input-bordered" />
       </div>
+      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <img src="https://placeimg.com/80/80/people" />
+        </div>
+      </label>
     </div>
   )
 }

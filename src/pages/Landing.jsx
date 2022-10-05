@@ -8,7 +8,9 @@ const Landing = () => {
                 <div className="mockup-phone">
                     <div className="camera"></div> 
                     <div className="display">
-                        <div className="artboard artboard-demo phone-1">Hi.</div>
+                        <div className="artboard artboard-demo phone-1">
+                            <h1>Hello, world!</h1>
+                        </div>
                     </div>
                 </div>
                 <div className="max-w-2xl mr-4">

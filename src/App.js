@@ -24,7 +24,7 @@ const ProtectedRoute = ({ user, children }) => {
 }
 
 function App() {
-  const [user, setUser] = useState(false)
+  const [user, setUser] = useState(true)
 
   return (
     <div className="App" data-theme='garden'>

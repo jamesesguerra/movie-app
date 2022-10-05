@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from "react-router-dom"
 
 const PublicNavbar = () => {
   return (
@@ -16,13 +16,13 @@ const PublicNavbar = () => {
         </div>
       </div>
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">public</a>
+        <Link to="/" className="btn btn-ghost normal-case text-xl">public</Link>
       </div>
       <div className="flex-2 mr-2">
-        <a className="btn btn-ghost">Log-in</a>
+        <Link className="btn btn-ghost" to="/login">Log-in</Link>
       </div>
       <div className="flex-2">
-        <a className="btn">Register</a>
+      <Link className="btn" to="/register">Register</Link>
       </div>
     </div>
   )

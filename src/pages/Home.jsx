@@ -5,7 +5,7 @@ import CarouselTitle from '../components/CarouselTitle'
 const Home = () => {
   return (
     <>
-      <div className='mx-8'>
+      <div className='mx-6'>
         <div
           className='rounded-lg bg-cover text-white bg-cover bg-center my-10'
           style={{

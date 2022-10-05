@@ -29,7 +29,7 @@ function App() {
     <div className="App" data-theme='garden'>
       <Routes>
         <Route path='/' element={<Template user={user} />}>
-          <Route index element={!user ? <Landing /> : <Navigate to="/home" replace={true} />} />
+          <Route index element={!user ? <Landing /> : <Navigate to="/home" replace />} />
           <Route path="login" element={!user ? <Login /> : <Navigate to='/home' replace />} />
           <Route path="register" element={!user ? <Register /> : <Navigate to='/home' replace />} />
         </Route>

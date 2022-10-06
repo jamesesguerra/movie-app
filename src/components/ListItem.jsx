@@ -7,7 +7,7 @@ const ListItem = ({ listInfo }) => {
     <div>
       <Link to='/lists'>
           <div className='flex justify-between'>
-              <h1 className='text-3xl py-4 font-bold uppercase'>{listInfo.name}</h1>
+              <h1 className='text-2xl py-4 font-bold uppercase'>{listInfo.name}</h1>
               <span className='font-light text-base px-2 mt-6'>{listInfo.movies.length} films</span>   
           </div>
           <ListPreview movies={listInfo.movies} />

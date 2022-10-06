@@ -50,10 +50,10 @@ const MovieDetail = () => {
                       <td>Rating</td>
                       <td>{movieInfo.vote_average}</td>
                     </tr>
-                    <tr>
+                    {/* <tr>
                       <td>Revenue</td>
                       <td>${getNumberWithCommas(movieInfo.revenue)}</td>
-                    </tr>
+                    </tr> */}
                   </tbody>
                 </table>
               </div>

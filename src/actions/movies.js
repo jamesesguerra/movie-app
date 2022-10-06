@@ -36,12 +36,18 @@ const getCast = (movieId) => {
     return request.then(response => response.data['cast']);
 }
 
+const getPoster = (movieId) => {
+    const request = axios.get(`${BASE_URL}/${movieId}?api_key=${API_KEY}&language=en-US`);
+    return request.then(response => response.data['poster_path']);
+}
+
 const actions = {
     API_KEY,
     getMovieDetail,
     getFeaturedMovie,
     getFeaturedList,
-    getCast
+    getCast,
+    getPoster
 }
 
 export default actions

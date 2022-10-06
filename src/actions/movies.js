@@ -6,6 +6,9 @@ const BASE_URL = `https://api.themoviedb.org/3/movie`;
 
 // https://api.themoviedb.org/3/movie/718930?api_key={{ _.api }}&language=en-US
 // https://api.themoviedb.org/3/movie/popular?api_key=<<api_key>>&language=en-US&page=1
+
+//https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=<<api_key>>&language=en-US&page=1
+
 // https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=<<api_key>>&language=en-US
 
 const getMovieDetail = (movieId) => {
@@ -18,9 +21,14 @@ const getFeaturedMovie = () => {
     return request.then(response => response.data['results'][0]);
 }
 
-const getFeaturedList = (section) => {
-    const request = axios.get(`${BASE_URL}/${section}?api_key=${API_KEY}&language=en-US$page=1`);
-    return request.then(response => response.data);
+const getFeaturedList = (section, movieId) => {
+    if (!movieId) {
+        const request = axios.get(`${BASE_URL}/${section}?api_key=${API_KEY}&language=en-US$page=1`);
+        return request.then(response => response.data);
+    } else {
+        const request = axios.get(`${BASE_URL}/${movieId}/${section}?api_key=${API_KEY}&language=en-US$page=1`);
+        return request.then(response => response.data);
+    }
 }
 
 const getCast = (movieId) => {
@@ -32,7 +40,8 @@ const actions = {
     API_KEY,
     getMovieDetail,
     getFeaturedMovie,
-    getFeaturedList
+    getFeaturedList,
+    getCast
 }
 
 export default actions

@@ -4,12 +4,12 @@ import CarouselItem from "./CarouselItem"
 import movieService from '../actions/movies';
 
 
-const Carousel = ({ section }) => {
+const Carousel = ({ section, movieId }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     movieService
-      .getFeaturedList(section)
+      .getFeaturedList(section, movieId)
       .then(data => setMovies(data['results']))
   }, [])
 

@@ -12,7 +12,7 @@ const MovieBanner = ({ hideTxt, movieInfo }) => {
     >
       {!hideTxt && (
         <div className='max-w-sm px-4 pt-80'>
-            <h2 className='text-3xl pb-2 font-serif'>{movieInfo.title}</h2>
+            <h2 className='text-3xl pb-2 font-bold'>{movieInfo.title}</h2>
             <p className='text-xs'>{movieInfo.overview}</p>
         </div>
       )}

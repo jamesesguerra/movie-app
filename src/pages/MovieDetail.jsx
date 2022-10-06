@@ -7,13 +7,12 @@ import Carousel from '../components/Carousel';
 import MovieBanner from '../components/MovieBanner'
 import Pill from '../components/Pill';
 import { minsToHrsAndMins } from '../utils/time';
-import { getNumberWithCommas } from '../utils/currency';
+
 
 const MovieDetail = () => {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState({});
   const [genres, setGenres] = useState();
-  const [revenue, setRevenue] = useState();
   const [openTab, setOpenTab] = useState(1);
   const [cast, setCast] = useState([]);
 
@@ -31,15 +30,14 @@ const MovieDetail = () => {
 
   useEffect(() => {
     if (Object.keys(movieInfo).length !== 0) {
-      setGenres(movieInfo.genres.map((genre) => genre.name).join(', '))
-      setRevenue(getNumberWithCommas(movieInfo.revenue));
+      setGenres(movieInfo.genres.slice(0, 2).map((genre) => genre.name).join(', '));
     }
   }, [movieInfo])
 
   return (
     <div>
         <MovieBanner hideTxt={true} movieInfo={movieInfo} />
-        <div className='mx-6 lg:mx-32 min-h-max'>
+        <div className='mx-6 lg:mx-32 min-h-[550px]'>
           {!Object.keys(movieInfo).length !== 0 && (
             <div className='flex gap-x-20'>
 
@@ -76,24 +74,20 @@ const MovieDetail = () => {
                         <td>Rating</td>
                         <td>{movieInfo.vote_average}</td>
                       </tr>
-                      <tr>
-                        <td>Revenue</td>
-                        <td>${revenue}</td>
-                      </tr>
                     </tbody>
                   </table>
                 </div>
 
                 <div className={`${openTab === 2 ? "block": "hidden"} pt-4`}>
-                  {cast.slice(0, 20).map((member) => <Pill label={member.original_name} />)}
+                  {cast.slice(0, 15).map((member) => <Pill label={member.original_name} />)}
                 </div>
               </div>
             </div>
           )}
         </div>
       
-        <div className='ml-6 md:mx-6 lg:mx-32 pt-16'>
-          <h2 className='text-2xl py-4 font-serif'>Similar Movies</h2>
+        <div className='ml-6 md:mx-6 lg:mx-32'>
+          <h2 className='text-2xl py-4'>Similar Movies</h2>
           <Carousel section={'similar'} movieId={movieId} /> 
         </div>
 

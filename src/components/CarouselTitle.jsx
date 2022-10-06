@@ -10,7 +10,7 @@ const CarouselTitle = ({ title }) => {
   }
 
   return (
-    <h2 className='text-2xl py-4 font-serif'>{ title } <Link to={urlMapping[title]}><span className="link link-hover link-primary text-base pl-2 font-sans">View All</span></Link></h2>
+    <h2 className='text-2xl py-4'>{ title } <Link to={urlMapping[title]}><span className="link link-hover link-primary text-base pl-2">View All</span></Link></h2>
   )
 }
 

@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 
 const Login = ({ setUser }) => {
     const handleLogin = () => {
-        console.log('hello')
         setUser('james');
     }
 
@@ -23,7 +22,7 @@ const Login = ({ setUser }) => {
                 </label>
                 <input type="text" placeholder="password" className="input input-bordered" />
                 <label className="label">
-                    <p className="label-text-alt">Don't have an account? <Link to="/register" className="link link-hover link-primary">Sign up here</Link></p>
+                    <p className="label-text-alt">Don't have an account? <Link to="/register" className="link link-hover link-secondary">Sign up here</Link></p>
                 </label>
                 </div>
                 <div className="form-control mt-6">

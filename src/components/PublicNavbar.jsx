@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const PublicNavbar = () => {
   return (
-    <div className="navbar bg-base-100 sticky top-0 z-50">
+    <div className="navbar bg-base-100 sticky top-0 z-50 drop-shadow-md">
       <div className="flex-0">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">

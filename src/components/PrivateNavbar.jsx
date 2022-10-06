@@ -7,7 +7,7 @@ const PrivateNavbar = ({ user, setUser }) => {
   }
 
   return (
-    <div className="navbar bg-base-100 sticky top-0 z-50">
+    <div className="navbar bg-base-100 sticky top-0 z-50 drop-shadow-md">
       <div className="flex-0">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -18,7 +18,7 @@ const PrivateNavbar = ({ user, setUser }) => {
               <Link to='/home'>Home</Link>
             </li>
             <li>
-              <Link to='/lists'>My Lists</Link>
+              <Link to='/lists'>Lists</Link>
             </li>
             <li>
               <Link to='/popular'>Popular</Link>

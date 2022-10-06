@@ -25,6 +25,8 @@ const MovieDetail = () => {
     movieService
       .getCast(movieId)
       .then(data => setCast(data))
+
+    window.scrollTo(0, 0)
   }, [movieId])
 
   useEffect(() => {
@@ -83,17 +85,18 @@ const MovieDetail = () => {
                 </div>
 
                 <div className={`${openTab === 2 ? "block": "hidden"} pt-4`}>
-                  {cast.map((member) => <Pill label={member.original_name} />)}
+                  {cast.slice(0, 20).map((member) => <Pill label={member.original_name} />)}
                 </div>
               </div>
             </div>
           )}
         </div>
       
-        <div className='mx-6 lg:mx-32 pt-16'>
+        <div className='ml-6 md:mx-6 lg:mx-32 pt-16'>
           <h2 className='text-2xl py-4 font-serif'>Similar Movies</h2>
           <Carousel section={'similar'} movieId={movieId} /> 
         </div>
+
     </div>
   )
 }

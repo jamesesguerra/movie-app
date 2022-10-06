@@ -1,14 +1,23 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 
 import MovieBanner from '../components/MovieBanner'
 import Carousel from '../components/Carousel'
 import CarouselTitle from '../components/CarouselTitle'
+import movieService from '../actions/movies';
 
 const Home = () => {
+  const [featuredMovie, setFeaturedMovie] = useState({});
+
+  useEffect(() => {
+    movieService
+      .getFeaturedMovie()
+      .then((data) => setFeaturedMovie(data))
+  }, [])
+
   return (
     <>
       <div>
-        <MovieBanner />
+        <MovieBanner movieInfo={featuredMovie} />
         <div className='ml-6'>
           <CarouselTitle title={'Popular'} />
           <Carousel section={'popular'} />

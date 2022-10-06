@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
 const CarouselItem = ({ movie }) => {
-  console.log(movie)
 
   return (
         <div className="carousel-item overflow-hidden" style={{ maxWidth: '14rem' }}>

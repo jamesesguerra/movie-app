@@ -12,6 +12,11 @@ const getMovieDetail = (movieId) => {
     return request.then(response => response.data);
 }
 
+const getFeaturedMovie = () => {
+    const request = axios.get(`${BASE_URL}/popular?api_key=${API_KEY}&language=en-US$page=1`);
+    return request.then(response => response.data['results'][0]);
+}
+
 const getFeaturedList = (section) => {
     const request = axios.get(`${BASE_URL}/${section}?api_key=${API_KEY}&language=en-US$page=1`);
     return request.then(response => response.data);
@@ -20,6 +25,7 @@ const getFeaturedList = (section) => {
 const actions = {
     API_KEY,
     getMovieDetail,
+    getFeaturedMovie,
     getFeaturedList
 }
 

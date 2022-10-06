@@ -3,7 +3,7 @@ import React from 'react'
 const MovieBanner = () => {
   return (
     <div
-        className='rounded-lg bg-cover text-white bg-cover bg-center my-10'
+        className='rounded-lg bg-cover text-white bg-cover bg-center my-10 mx-6'
         style={{
         backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(101, 101, 101, .5), rgba(255, 255, 255, 0)), url('https://image.tmdb.org/t/p/w1280/y2Ca1neKke2mGPMaHzlCNDVZqsK.jpg')`,
         height: 500

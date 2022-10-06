@@ -7,20 +7,20 @@ import CarouselTitle from '../components/CarouselTitle'
 const Home = () => {
   return (
     <>
-      <div className='mx-6'>
+      <div>
         <MovieBanner />
-        <div>
+        <div className='ml-6'>
           <CarouselTitle title={'Popular'} />
-          <Carousel />
+          <Carousel section={'popular'} />
 
           <CarouselTitle title={'Now Showing'} />
-          <Carousel />
+          <Carousel section={'now_playing'} />
 
           <CarouselTitle title={'Coming Soon'} />
-          <Carousel />
+          <Carousel section={'upcoming'} />
 
           <CarouselTitle title={'Top-rated'} />
-          <Carousel />
+          <Carousel section={'top_rated'} />
         </div>
       </div>
     </>

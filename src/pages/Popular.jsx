@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { useBottomScrollListener } from 'react-bottom-scroll-listener';
+import { BottomScrollListener } from 'react-bottom-scroll-listener';
+
 
 import movieService from '../actions/movies';
 import MovieCard from '../components/MovieCard';
@@ -9,21 +11,34 @@ const Popular = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
 
+  const callback = () => {
+    console.log('hello');
+    setPage(prevPage => prevPage + 1);
+
+    movieService
+      .getPopularMovies(page)
+      .then(data => setMovies([...movies, ...data]))
+  }
+
+  const scrollRef = useBottomScrollListener(callback);
+
   useEffect(() => {
     movieService
       .getPopularMovies(page)
-      .then(data => {
-        setMovies(data);
-        console.log(data)
-      })
-  }, [page])
+      .then(data => setMovies(data))
+  }, [])
 
   return (
-    <>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 mt-8 mx-6 gap-4">
+    <BottomScrollListener onBottom={callback}>
+      {(scrollRef) => (
+        <div
+          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 my-16 mx-6 gap-4" 
+          ref={scrollRef}
+        >
         {movies.map(movie => <MovieCard key={movie.title} movie={movie} />)}
-      </div>
-    </>
+        </div>
+      )}
+    </BottomScrollListener>
   )
 }
 

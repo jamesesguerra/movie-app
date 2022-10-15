@@ -14,7 +14,7 @@ const Carousel = ({ section, movieId }) => {
   }, [])
 
   return (
-    <div className="carousel carousel-center space-x-4 h-96 pb-10">
+    <div className="carousel carousel-center space-x-4 h-96">
         {movies.map((movie) => {
           return (
             <CarouselItem movie={movie} />

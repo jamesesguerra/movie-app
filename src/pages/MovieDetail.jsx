@@ -35,7 +35,7 @@ const MovieDetail = () => {
   }, [movieInfo])
 
   return (
-    <div>
+    <div className="min-h-[1000px]">
         <MovieBanner hideTxt={true} movieInfo={movieInfo} />
         {Object.keys(movieInfo).length !== 0 && (
           <>

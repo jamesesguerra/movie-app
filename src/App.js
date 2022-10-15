@@ -34,7 +34,7 @@ function App() {
   const [user, setUser] = useState('j')
 
   return (
-    <div className="App" data-theme='light'>
+    <div className="App" data-theme='autumn'>
       <Routes>
         <Route path='/' element={<Template user={user} />}>
           <Route index element={!user ? <Landing /> : <Navigate to="/home" replace />} />

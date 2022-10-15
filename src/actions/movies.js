@@ -34,9 +34,9 @@ const getPoster = (movieId) => {
     return request.then(response => response.data['poster_path']);
 }
 
-const getPopularMovies = (movieId, page) => {
+const getPopularMovies = (page) => {
     const request = axios.get(`${BASE_URL}/popular?api_key=${API_KEY}&language=en-US&page=${page}`);
-    return request.then(response => response.data);
+    return request.then(response => response.data.results);
 }
 
 const actions = {

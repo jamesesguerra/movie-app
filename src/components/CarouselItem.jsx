@@ -11,11 +11,11 @@ const CarouselItem = ({ movie }) => {
             <LazyLoadImage
               src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               className="rounded-lg"
-              width={224}
-              height={336}
+              width={200}
+              height={312}
               placeholder={<ImagePlaceholder />}  
             />
-            </Link>
+          </Link>
         </div> 
   )
 }

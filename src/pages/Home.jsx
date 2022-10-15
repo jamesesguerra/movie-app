@@ -12,6 +12,8 @@ const Home = () => {
     movieService
       .getFeaturedMovie()
       .then((data) => setFeaturedMovie(data))
+
+      window.scrollTo(0, 0)
   }, [])
 
   return (

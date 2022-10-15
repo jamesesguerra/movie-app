@@ -1,8 +1,5 @@
-import { useRef } from 'react'
 
 const ListModal = () => {
-  const modalRef = useRef();
-
   return (
     <>
         <div className="modal" id="my-modal-2">

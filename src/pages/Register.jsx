@@ -1,6 +1,11 @@
-import React from 'react'
+import { useEffect } from "react"
 
 const Register = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row">

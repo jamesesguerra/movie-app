@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from 'react'
 
 import ListItem from '../components/ListItem'
 import ListModal from '../components/ListModal'
@@ -6,6 +6,11 @@ import ListModal from '../components/ListModal'
 const lists = [{name: 'Favorites', description: 'A list of your favorite movies.', count: 0, movies: [718930, 2900, 760161, 1900]}, {name: 'Another list', description: "hahaha", count: 5, movies: [2928]}]
 
 const ListList = () => {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className='mx-6 pt-8'>
       <div className="flex justify-between">

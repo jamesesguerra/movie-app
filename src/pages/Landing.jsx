@@ -1,5 +1,12 @@
+import { useEffect } from "react"
+
 
 const Landing = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
   return (
     <>
         <div className="hero min-h-full bg-base-100 my-36">

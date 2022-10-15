@@ -1,6 +1,12 @@
+import { useEffect } from "react"
 import { Link } from "react-router-dom"
 
 const Login = ({ setUser }) => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     const handleLogin = () => {
         setUser('james');
     }

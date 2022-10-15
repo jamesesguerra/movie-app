@@ -1,7 +1,13 @@
+import { useEffect } from "react"
+
 import PublicNavbar from "../components/PublicNavbar"
 import Footer from "../components/Footer"
 
 const NotFound = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])  
+
   return (
     <>
         <PublicNavbar />

@@ -12,7 +12,6 @@ const Popular = () => {
   const [page, setPage] = useState(1);
 
   const callback = () => {
-    console.log('hello');
     setPage(prevPage => prevPage + 1);
 
     movieService
@@ -29,16 +28,19 @@ const Popular = () => {
   }, [])
 
   return (
-    <BottomScrollListener onBottom={callback}>
-      {(scrollRef) => (
-        <div
-          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 my-16 mx-6 gap-4" 
-          ref={scrollRef}
-        >
-        {movies.map(movie => <MovieCard key={movie.title} movie={movie} />)}
-        </div>
-      )}
-    </BottomScrollListener>
+    <>
+      <h1 className='mx-6 mt-16 text-3xl pb-8'>Popular Movies</h1>
+      <BottomScrollListener onBottom={callback}>
+        {(scrollRef) => (
+          <div
+            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 mb-16 mx-6 gap-4" 
+            ref={scrollRef}
+          >
+          {movies.map(movie => <MovieCard key={movie.title} movie={movie} />)}
+          </div>
+        )}
+      </BottomScrollListener>
+    </>
   )
 }
 

@@ -1,15 +1,15 @@
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
-import ListItem from '../components/ListItem'
-import ListModal from '../components/ListModal'
+import ListItem from "../components/ListItem";
+import ListModal from "../components/ListModal";
 
-const lists = [{name: 'Favorites', description: 'A list of your favorite movies.', count: 0, movies: [718930, 2900, 760161, 1900]}, {name: 'Another list', description: "hahaha", count: 5, movies: [2928]}]
+const lists = [{name: "Favorites", description: "A list of your favorite movies.", count: 0, movies: [718930, 2900, 760161, 1900]}, {name: "Another list", description: "hahaha", count: 5, movies: [2928]}];
 
 const ListList = () => {
   
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className='mx-6 pt-8'>
@@ -23,12 +23,12 @@ const ListList = () => {
       <hr className="my-2 h-px bg-slate-500 border-0" />
 
       <div>
-        {lists.map((list) => <ListItem listInfo={list} />)}
+        {lists.map((list) => <ListItem listInfo={list} key={list.name} />)}
       </div>
 
       <ListModal />
     </div>
-  )
-}
+  );
+};
 
-export default ListList
+export default ListList;

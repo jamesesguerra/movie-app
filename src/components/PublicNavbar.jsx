@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const PublicNavbar = () => {
   return (
@@ -22,10 +22,10 @@ const PublicNavbar = () => {
         <Link className="btn btn-ghost" to="/login">Log-in</Link>
       </div>
       <div className="flex-2">
-      <Link className="btn" to="/register">Register</Link>
+        <Link className="btn" to="/register">Register</Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PublicNavbar
+export default PublicNavbar;

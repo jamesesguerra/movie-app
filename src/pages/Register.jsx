@@ -1,10 +1,10 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
 
 const Register = () => {
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="hero min-h-screen">
@@ -34,7 +34,7 @@ const Register = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;

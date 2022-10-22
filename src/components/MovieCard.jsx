@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-import { LazyLoadImage } from "react-lazy-load-image-component"
+import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 const MovieCard = ({ movie }) => {
@@ -10,7 +10,7 @@ const MovieCard = ({ movie }) => {
         className="rounded-lg"
       />
     </Link>
-  )
-}
+  );
+};
 
-export default MovieCard
+export default MovieCard;

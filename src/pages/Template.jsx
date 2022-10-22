@@ -1,9 +1,8 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
 
-import PublicNavbar from '../components/PublicNavbar'
-import PrivateNavbar from '../components/PrivateNavbar';
-import Footer from '../components/Footer';
+import PublicNavbar from "../components/PublicNavbar";
+import PrivateNavbar from "../components/PrivateNavbar";
+import Footer from "../components/Footer";
 
 const Template= ({ user, setUser }) => {
   return (
@@ -12,7 +11,7 @@ const Template= ({ user, setUser }) => {
       <Outlet />
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Template
+export default Template;

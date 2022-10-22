@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-const PrivateNavbar = ({ user, setUser }) => {
+const PrivateNavbar = ({ setUser }) => {
 
   const handleLogout = () => {
-    setUser('');
-  }
+    setUser("");
+  };
 
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50 drop-shadow-md">
@@ -46,7 +46,7 @@ const PrivateNavbar = ({ user, setUser }) => {
         <input type="text" placeholder="Search" className="input input-bordered" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PrivateNavbar
+export default PrivateNavbar;

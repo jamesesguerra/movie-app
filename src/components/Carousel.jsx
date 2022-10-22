@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-import CarouselItem from "./CarouselItem"
-import movieService from '../actions/movies';
+import CarouselItem from "./CarouselItem";
+import movieService from "../actions/movies";
 
 
 const Carousel = ({ section, movieId }) => {
@@ -10,18 +10,18 @@ const Carousel = ({ section, movieId }) => {
   useEffect(() => {
     movieService
       .getFeaturedList(section, movieId)
-      .then(data => setMovies(data['results']))
-  }, [])
+      .then(data => setMovies(data["results"]));
+  }, []);
 
   return (
-    <div className="carousel carousel-center space-x-4 h-96">
-        {movies.map((movie) => {
-          return (
-            <CarouselItem movie={movie} />
-          )
-        })}
+    <div className="carousel carousel-center space-x-4 pb-4">
+      {movies.map((movie) => {
+        return (
+          <CarouselItem movie={movie} key={movie.id} />
+        );
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default Carousel
+export default Carousel;

@@ -7,7 +7,7 @@ import ImagePlaceholder from "./ImagePlaceholder";
 const CarouselItem = ({ movie }) => {
 
   return (
-    <div className="carousel-item overflow-hidden" style={{ maxWidth: "14rem" }}>
+    <div className="carousel-item overflow-hidden pr-4" style={{ maxWidth: "14rem" }}>
       <Link to={`/movies/${movie.id}`}>
         <LazyLoadImage
           src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}

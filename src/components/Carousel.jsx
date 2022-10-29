@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import Flickity from "react-flickity-component";
 
 import CarouselItem from "./CarouselItem";
 import movieService from "../actions/movies";
+import "../flickity.css";
 
 
-const Carousel = ({ section, movieId }) => {
+const CarouselTwo = ({ section, movieId }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -13,15 +15,30 @@ const Carousel = ({ section, movieId }) => {
       .then(data => setMovies(data["results"]));
   }, []);
 
+  const flickityOptions = {
+    freeScroll: true,
+    contain: true,
+    cellAlign: "left",
+    prevNextButtons: true,
+    pageDots: false,
+    freeScrollFriction: 0.2,
+    selectedAttraction: 0.01,
+    friction: 0.15,
+    groupCells: "100%",
+    resize: true,
+  };
+
   return (
-    <div className="carousel carousel-center space-x-4 pb-4">
-      {movies.map((movie) => {
-        return (
-          <CarouselItem movie={movie} key={movie.id} />
-        );
-      })}
+    <div className="pb-8">
+      <Flickity className="slider" options={flickityOptions}>
+        {movies.map((movie) => {
+          return (
+            <CarouselItem movie={movie} key={movie.id} />
+          );
+        })}
+      </Flickity>
     </div>
   );
 };
 
-export default Carousel;
+export default CarouselTwo;

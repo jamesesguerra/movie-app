@@ -25,6 +25,7 @@ const MovieDetail = () => {
       .getCast(movieId)
       .then(data => setCast(data));
 
+    setOpenTab(1);
     window.scrollTo(0, 0);
   }, [movieId]);
 
@@ -39,8 +40,8 @@ const MovieDetail = () => {
       <MovieBanner hideTxt={true} movieInfo={movieInfo} />
       {Object.keys(movieInfo).length !== 0 && (
         <>
-          <div className='mx-6 lg:mx-32 min-h-[550px]'>
-            <div className='flex gap-x-20'>
+          <div className='min-h-[550px]'>
+            <div className='flex gap-x-20 justify-center'>
               <div className='hidden xl:block'>
                 <LazyLoadImage src={`https://image.tmdb.org/t/p/w500/${movieInfo.poster_path}`} className="rounded-lg" width={300} height={336} />
               </div>

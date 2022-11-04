@@ -1,14 +1,18 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Login = ({ setUser }) => {
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleLogin = () => {
-    setUser("james");
+  const handleLogin = (e) => {
+    // setUser("james");
+    e.preventDefault();
+    console.log("logging in as: ", email, password);
   };
 
   return (
@@ -20,13 +24,25 @@ const Login = ({ setUser }) => {
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
-              <input type="text" placeholder="email" className="input input-bordered" />
+              <input
+                type="text"
+                placeholder="email"
+                className="input input-bordered"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
-              <input type="text" placeholder="password" className="input input-bordered" />
+              <input
+                type="password"
+                placeholder="password"
+                className="input input-bordered"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
               <label className="label">
                 <p className="label-text-alt">Don't have an account? <Link to="/register" className="link link-hover link-secondary">Sign up here</Link></p>
               </label>

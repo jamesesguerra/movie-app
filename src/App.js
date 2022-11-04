@@ -31,7 +31,7 @@ const ProtectedRoute = ({ user, setUser }) => {
 };
 
 function App() {
-  const [user, setUser] = useState("j");
+  const [user, setUser] = useState("");
 
   return (
     <div className="App" data-theme="autumn">

@@ -7,7 +7,7 @@ import loginService from "../actions/login";
 
 
 const Login = ({ setUser }) => {
-  const [isInvalid, setIsInvalid] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const formik = useFormik({
     initialValues: {
@@ -24,7 +24,11 @@ const Login = ({ setUser }) => {
         setUser(user);
       } catch (err) {
         console.error(err);
-        setIsInvalid(true);
+        if (err.response.data.error === "invalid email or password") {
+          setErrorMsg("Email or password is incorrect.");
+        } else {
+          setErrorMsg("An error occured.");
+        }
       }
     }
   });
@@ -72,15 +76,15 @@ const Login = ({ setUser }) => {
               {formik.touched.password && formik.errors.password ? (
                 <p className="pt-2 text-xs text-rose-500">{formik.errors.password}</p>
               ) : null}
-              {isInvalid && (
-                <div className="text-center bg-red-200 mt-4 py-4">
-                  <p className="text-rose-900">Email or password is incorrect.</p>
-                </div>
-              )}
-              <label className="label">
-                <p className="label-text-alt">Don't have an account? <Link to="/register" className="link link-hover link-secondary">Sign up here</Link></p>
-              </label>
             </div>
+            {errorMsg && (
+              <div className="text-center bg-red-200 mt-4 py-4 px-2">
+                <p className="text-rose-900">{errorMsg}</p>
+              </div>
+            )}
+            <label className="label">
+              <p className="label-text-alt">Don't have an account? <Link to="/register" className="link link-hover link-secondary">Sign up here</Link></p>
+            </label>
             <div className="form-control mt-6">
               <button
                 className="btn btn-primary"

@@ -1,61 +1,77 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 import loginService from "../actions/login";
 
 
 const Login = ({ setUser }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [isInvalid, setIsInvalid] = useState(false);
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: ""
+    },
+    validationSchema: Yup.object({
+      email: Yup.string().email("Invalid email address").required("Required"),
+      password: Yup.string().min(8, "Must be at least 8 characters").required("Required")
+    }),
+    onSubmit: async(values) => {
+      try {
+        const user = await loginService.login(values);
+        setUser(user);
+      } catch (err) {
+        console.error(err);
+        setIsInvalid(true);
+      }
+    }
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleLogin = async() => {
-    try {
-      const user = await loginService.login({
-        email, password
-      });
-
-      setUser(user);
-      setEmail("");
-      setPassword("");
-    } catch (err) {
-      setIsInvalid(true);
-      console.error(err);
-    }
-  };
-
   return (
     <div className="grid h-screen place-items-center">
       <div>
         <div className="card w-full w-96 shadow-2xl bg-base-100">
-          <div className="card-body">
+          <form className="card-body" onSubmit={formik.handleSubmit}>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
+                id="email"
+                name="email"
                 type="text"
                 placeholder="email"
-                className="input input-bordered"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                className="input input-bordered required:border-red-500"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               />
+              {formik.touched.email && formik.errors.email ? (
+                <p className="pt-2 text-xs text-rose-500">{formik.errors.email}</p>
+              ) : null}
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
+                id="password"
+                name="password"
                 type="password"
                 placeholder="password"
                 className="input input-bordered"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={formik.values.password}
+                onChange={formik.handleChange}
               />
+              {formik.touched.password && formik.errors.password ? (
+                <p className="pt-2 text-xs text-rose-500">{formik.errors.password}</p>
+              ) : null}
               {isInvalid && (
                 <div className="text-center bg-red-200 mt-4 py-4">
                   <p className="text-rose-900">Email or password is incorrect.</p>
@@ -66,9 +82,14 @@ const Login = ({ setUser }) => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary" onClick={handleLogin}>Sign in</button>
+              <button
+                className="btn btn-primary"
+                type="submit"
+              >
+                Sign in
+              </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

@@ -1,18 +1,31 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+import loginService from "../actions/login";
+
+
+const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isInvalid, setIsInvalid] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleLogin = (e) => {
-    // setUser("james");
-    e.preventDefault();
-    console.log("logging in as: ", email, password);
+  const handleLogin = async() => {
+    try {
+      const user = await loginService.login({
+        email, password
+      });
+      console.log(user);
+      setUser(user);
+      setEmail("");
+      setPassword("");
+    } catch (err) {
+      setIsInvalid(true);
+      console.error(err);
+    }
   };
 
   return (
@@ -43,6 +56,11 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              {isInvalid && (
+                <div className="text-center bg-red-200 mt-4 py-4">
+                  <p className="text-rose-900">Email or password is incorrect.</p>
+                </div>
+              )}
               <label className="label">
                 <p className="label-text-alt">Don't have an account? <Link to="/register" className="link link-hover link-secondary">Sign up here</Link></p>
               </label>

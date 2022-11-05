@@ -39,7 +39,7 @@ function App() {
         <Route path='/' element={<Template user={user} />}>
           <Route index element={!user ? <Landing /> : <Navigate to="/home" replace />} />
           <Route path="login" element={!user ? <Login setUser={setUser} /> : <Navigate to='/home' replace />} />
-          <Route path="register" element={!user ? <Register /> : <Navigate to='/home' replace />} />
+          <Route path="register" element={!user ? <Register setUser={setUser} /> : <Navigate to='/home' replace />} />
         </Route>
         <Route element={<ProtectedRoute user={user} setUser={setUser} />}>
           <Route path='home' element={<Home />} />

@@ -43,7 +43,7 @@ function App() {
         </Route>
         <Route element={<ProtectedRoute user={user} setUser={setUser} />}>
           <Route path='home' element={<Home />} />
-          <Route path='lists' element={<ListList />} />
+          <Route path='lists' element={<ListList user={user} />} />
           <Route path='popular' element={<Popular />} />
           <Route path='now-showing' element={<NowShowing />} />
           <Route path='coming-soon' element={<ComingSoon />} />

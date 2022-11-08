@@ -5,8 +5,6 @@ import listService from "../actions/lists";
 
 
 const ListModal = () => {
-  const navigate = useNavigate();
-
   const formik = useFormik({
     initialValues: {
       name: "",

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
+import listService from "../actions/lists";
 import loginService from "../actions/login";
 
 
@@ -22,6 +23,7 @@ const Login = ({ setUser }) => {
       try {
         const user = await loginService.login(values);
         setUser(user);
+        listService.setToken(user.token);
       } catch (err) {
         console.error(err);
         if (err.response.data.error === "invalid email or password") {

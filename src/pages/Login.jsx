@@ -22,6 +22,9 @@ const Login = ({ setUser }) => {
     onSubmit: async(values) => {
       try {
         const user = await loginService.login(values);
+        window.localStorage.setItem(
+          "loggedInUser", JSON.stringify(user)
+        );
         setUser(user);
         listService.setToken(user.token);
       } catch (err) {

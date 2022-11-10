@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Routes,
   Route,
@@ -18,6 +18,7 @@ import ComingSoon from "./pages/ComingSoon";
 import TopRated from "./pages/TopRated";
 import NotFound from "./pages/NotFound";
 import MovieDetail from "./pages/MovieDetail";
+import listService from "./actions/lists";
 
 
 const ProtectedRoute = ({ user, setUser }) => {
@@ -32,6 +33,15 @@ const ProtectedRoute = ({ user, setUser }) => {
 
 function App() {
   const [user, setUser] = useState("");
+
+  useEffect(() => {
+    const loggedInUser = window.localStorage.getItem("loggedInUser");
+    if (loggedInUser) {
+      const user = JSON.parse(loggedInUser);
+      setUser(user);
+      listService.setToken(user.token);
+    }
+  }, []);
 
   return (
     <div className="App" data-theme="autumn">

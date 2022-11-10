@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
+import AddListModal from "../components/AddListModal";
 import ListItem from "../components/ListItem";
-import ListModal from "../components/ListModal";
 import listService from "../actions/lists";
 
 
@@ -30,7 +30,7 @@ const ListList = ({ user }) => {
         {lists.map((list) => <ListItem listInfo={list} key={list.name} />)}
       </div>
 
-      <ListModal />
+      <AddListModal />
     </div>
   );
 };

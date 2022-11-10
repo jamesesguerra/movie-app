@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const PrivateNavbar = ({ setUser }) => {
 
   const handleLogout = () => {
+    window.localStorage.removeItem("loggedInUser");
     setUser("");
   };
 

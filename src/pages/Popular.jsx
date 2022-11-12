@@ -5,8 +5,8 @@ import { BottomScrollListener } from "react-bottom-scroll-listener";
 import movieService from "../actions/movies";
 import MovieCard from "../components/MovieCard";
 
-const Popular = () => {
 
+const Popular = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
 

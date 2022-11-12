@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ListList from "./pages/ListList";
+import ListDetail from "./pages/ListDetail";
 import Popular from "./pages/Popular";
 import NowShowing from "./pages/NowShowing";
 import ComingSoon from "./pages/ComingSoon";
@@ -54,6 +55,7 @@ function App() {
         <Route element={<ProtectedRoute user={user} setUser={setUser} />}>
           <Route path='home' element={<Home />} />
           <Route path='lists' element={<ListList user={user} />} />
+          <Route path='lists/:listId' element={<ListDetail />} />
           <Route path='popular' element={<Popular />} />
           <Route path='now-showing' element={<NowShowing />} />
           <Route path='coming-soon' element={<ComingSoon />} />

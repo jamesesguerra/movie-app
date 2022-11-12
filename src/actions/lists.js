@@ -14,6 +14,11 @@ const getAll = (userId) => {
   return request.then(response => response.data);
 };
 
+const getOne = (listId) => {
+  const request = axios.get(`${BASE_URL}/${listId}`);
+  return request.then(response => response.data);
+};
+
 const create = async(newList) => {
   const config = {
     headers: { Authorization: token }
@@ -33,4 +38,11 @@ const remove = (id) => {
   return request.then(response => response);
 };
 
-export default { setToken, getAll, create, update, remove };
+export default {
+  setToken,
+  getAll,
+  getOne,
+  create,
+  update,
+  remove
+};

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -5,6 +6,8 @@ import listService from "../actions/lists";
 
 
 const ListModal = () => {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -17,6 +20,7 @@ const ListModal = () => {
       try {
         const newList = await listService.create(values);
         console.log(newList);
+        navigate(`/lists/${newList.id}`);
       } catch (err) {
         console.error(err);
       }

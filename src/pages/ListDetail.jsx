@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import MovieCard from "../components/MovieCard";
@@ -16,7 +16,7 @@ const ListDetail = () => {
   }, []);
 
   return (
-    <>
+    <div className="min-h-[700px]">
       {list && (
         <>
           <h1 className="mx-6 mt-16 text-3xl pb-4 font-bold">{list.name}</h1>
@@ -28,7 +28,7 @@ const ListDetail = () => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 

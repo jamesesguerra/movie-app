@@ -17,7 +17,7 @@ const ListList = ({ user }) => {
   }, []);
 
   return (
-    <div className='mx-6 pt-8'>
+    <div className='mx-6 pt-8 min-h-[800px]'>
       <div className="flex justify-between">
         <h1 className='text-4xl py-4 font-bold'>All Lists</h1>
         <div className="flex content-end">

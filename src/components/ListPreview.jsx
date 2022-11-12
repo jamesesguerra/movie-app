@@ -1,27 +1,15 @@
-import { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import movieService from "../actions/movies";
 
 const ListPreview = ({ movies }) => {
-  const [posters, setPosters] = useState([]);
-
-  useEffect(() => {
-    movies.forEach((movie) => {
-      movieService
-        .getPoster(movie)
-        .then(data => setPosters(prevState => [...prevState, data]));
-    });
-  }, []);
-
   return (
     <div className='flex relative min-h-[200px]'>
-      {posters.map((poster_path, index) => {
+      {movies.slice(0, 4).map((movie, index) => {
         return (
           <LazyLoadImage 
-            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             className="rounded-lg absolute"
-            key={poster_path}
+            key={movie.id}
             style={{ left: index * 40 }}
             width={150}
             height={250}

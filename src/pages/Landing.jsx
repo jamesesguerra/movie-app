@@ -8,17 +8,9 @@ const Landing = () => {
   }, []);
 
   return (
-    <>
+    <div className="w-[72rem] mx-auto">
       <div className="hero min-h-full bg-base-100 my-36">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          {/* <div className="mockup-phone">
-                  <div className="camera"></div> 
-                  <div className="display">
-                      <div className="artboard artboard-demo phone-1">
-                          <h1>Hello, world!</h1>
-                      </div>
-                  </div>
-              </div> */}
           <div className="mockup-window border border-base-300">
             <div className="px-36 md:px-64 lg:px-64 py-32 border-t border-base-300">Hello!</div>
           </div>  
@@ -33,7 +25,7 @@ const Landing = () => {
       <div className="prose container mx-auto my-16 px-2">
         <h1 className='text-center'>it's like letterboxd except not really</h1>
       </div>
-    </>
+    </div>
   );
 };
 

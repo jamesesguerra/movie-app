@@ -9,7 +9,7 @@ const PrivateNavbar = ({ setUser }) => {
 
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50 drop-shadow-md">
-      <div className="flex-0">
+      <div className="w-[72rem] mx-auto">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
@@ -39,12 +39,12 @@ const PrivateNavbar = ({ setUser }) => {
             </li>
           </ul>
         </div>
-      </div>
-      <div className="flex-1">
-        <Link to="/home" className="btn btn-ghost normal-case text-xl">private</Link>
-      </div>
-      <div className="form-control mr-4">
-        <input type="text" placeholder="Search" className="input input-bordered" />
+        <div className="flex-1">
+          <Link to="/home" className="btn btn-ghost normal-case text-xl">private</Link>
+        </div>
+        <div className="form-control">
+          <input type="text" placeholder="Search" className="input input-bordered" />
+        </div>
       </div>
     </div>
   );

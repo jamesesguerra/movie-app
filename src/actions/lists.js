@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const BASE_URL = "/lists";
+const BASE_URL = "https://winter-sky-4828.fly.dev/lists";
 
 let token = null;
 

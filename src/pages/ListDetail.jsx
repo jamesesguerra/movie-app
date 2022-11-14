@@ -19,7 +19,7 @@ const ListDetail = () => {
   return (
     <div className="min-h-[700px]">
       {list && (
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-6xl px-6 lg:px-0">
           <div className="flex justify-between">
             <div>
               <h1 className="mt-16 text-3xl pb-4 font-bold">{list.name}</h1>

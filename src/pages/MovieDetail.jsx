@@ -40,7 +40,7 @@ const MovieDetail = () => {
       <MovieBanner hideTxt={true} movieInfo={movieInfo} />
       {Object.keys(movieInfo).length !== 0 && (
         <>
-          <div className='min-h-[550px]'>
+          <div className='min-h-[550px] mx-6'>
             <div className='flex gap-x-20 justify-center'>
               <div className='hidden xl:block'>
                 <LazyLoadImage src={`https://image.tmdb.org/t/p/w500/${movieInfo.poster_path}`} className="rounded-lg" width={300} height={336} />

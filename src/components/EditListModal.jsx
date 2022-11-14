@@ -5,7 +5,7 @@ const EditListModal = () => {
       <input type="checkbox" id="my-modal-6" className="modal-toggle" />
       <div className="modal modal-bottom">
         <div className="modal-box min-h-screen">
-          <div className="w-[72rem] mx-auto">
+          <div className="max-w-6xl mx-auto">
             <h1 className="font-bold text-3xl">Edit List</h1>
             <div className="divider"></div> 
             <form className="form-control w-full">

@@ -8,7 +8,7 @@ const Landing = () => {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="mx-auto">
       <div className="hero min-h-full bg-base-100 my-36">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="mockup-window border border-base-300">

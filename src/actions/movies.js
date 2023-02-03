@@ -44,6 +44,11 @@ const getComingSoon = (page) => {
   return request.then(response => response.data.results);
 };
 
+const getTopRated = (page) => {
+  const request = axios.get(`${BASE_URL}/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`);
+  return request.then(response => response.data.results);
+};
+
 const actions = {
   API_KEY,
   getMovieDetail,
@@ -52,7 +57,8 @@ const actions = {
   getCast,
   getPopularMovies,
   getNowShowing,
-  getComingSoon
+  getComingSoon,
+  getTopRated
 };
 
 export default actions;

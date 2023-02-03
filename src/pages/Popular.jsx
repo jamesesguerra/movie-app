@@ -27,7 +27,7 @@ const Popular = () => {
   }, []);
 
   return (
-    <>
+    <div className="min-h-screen">
       <h1 className='mx-6 mt-16 text-3xl pb-8'>Popular Movies</h1>
       <BottomScrollListener onBottom={callback} ref={scrollRef}>
         {(scrollRef) => (
@@ -39,7 +39,7 @@ const Popular = () => {
           </div>
         )}
       </BottomScrollListener>
-    </>
+    </div>
   );
 };
 

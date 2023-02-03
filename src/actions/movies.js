@@ -39,6 +39,11 @@ const getNowShowing = (page) => {
   return request.then(response => response.data.results);
 };
 
+const getComingSoon = (page) => {
+  const request = axios.get(`${BASE_URL}/upcoming?api_key=${API_KEY}&language=en-US&page=${page}`);
+  return request.then(response => response.data.results);
+};
+
 const actions = {
   API_KEY,
   getMovieDetail,
@@ -46,7 +51,8 @@ const actions = {
   getFeaturedList,
   getCast,
   getPopularMovies,
-  getNowShowing
+  getNowShowing,
+  getComingSoon
 };
 
 export default actions;

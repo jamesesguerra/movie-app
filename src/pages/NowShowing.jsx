@@ -27,7 +27,7 @@ const NowShowing = () => {
   }, []);
 
   return (
-    <>
+    <div className="min-h-screen">
       <h1 className='mx-6 mt-16 text-3xl pb-8'>Now Showing</h1>
       <BottomScrollListener onBottom={callback} ref={scrollRef}>
         {(scrollRef) => (
@@ -39,7 +39,7 @@ const NowShowing = () => {
           </div>
         )}
       </BottomScrollListener>
-    </>
+    </div>
   );
 };
 

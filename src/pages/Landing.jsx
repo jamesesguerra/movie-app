@@ -8,8 +8,8 @@ const Landing = () => {
   }, []);
 
   return (
-    <div className="h-screen">
-      <div className="mx-auto">
+    <div className="">
+      <div className="mx-auto lg:min-h-screen">
         <div className="hero min-h-full bg-base-100 my-36">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="mockup-window border border-base-300">

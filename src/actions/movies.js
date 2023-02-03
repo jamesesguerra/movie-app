@@ -34,13 +34,19 @@ const getPopularMovies = (page) => {
   return request.then(response => response.data.results);
 };
 
+const getNowShowing = (page) => {
+  const request = axios.get(`${BASE_URL}/now_playing?api_key=${API_KEY}&language=en-US&page=${page}`);
+  return request.then(response => response.data.results);
+};
+
 const actions = {
   API_KEY,
   getMovieDetail,
   getFeaturedMovie,
   getFeaturedList,
   getCast,
-  getPopularMovies
+  getPopularMovies,
+  getNowShowing
 };
 
 export default actions;

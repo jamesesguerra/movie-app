@@ -45,7 +45,7 @@ const Login = ({ setUser }) => {
   return (
     <div className="grid h-screen place-items-center">
       <div>
-        <div className="card w-full w-96 shadow-2xl bg-base-100">
+        <div className="card w-96 shadow-2xl bg-base-100">
           <form className="card-body" onSubmit={formik.handleSubmit}>
             <div className="form-control">
               <label className="label">

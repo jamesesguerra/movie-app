@@ -6,7 +6,7 @@ const Footer = () => {
         <p className="font-bold">
         Lorem Ipsum Dolor <br />Lorem ipsum dolor sit amet.
         </p> 
-        <p>Made with ♡ by james.esg.</p>
+        <p>Made with ♡ by james</p>
       </div> 
     </footer>
   );

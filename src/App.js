@@ -45,7 +45,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App" data-theme="autumn">
+    <div className="App" data-theme="pastel">
       <Routes>
         <Route path='/' element={<Template user={user} />}>
           <Route index element={!user ? <Landing /> : <Navigate to="/home" replace />} />

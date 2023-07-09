@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import art from "../assets/art.png";
 import desktop1 from "../assets/desktop1.png";
 import desktop2 from "../assets/desktop2.png";
+import desktop3 from "../assets/desktop3.png";
 
 
 const Landing = () => {
@@ -29,7 +30,7 @@ const Landing = () => {
 
         <div className="bg-base-100 my-24 px-4 text-center">
           <div className="max-w-xl mx-auto">
-            <img src={desktop1} alt="" />
+            <img src={desktop1} />
           </div>
 
           <div className="prose mx-auto">
@@ -40,7 +41,7 @@ const Landing = () => {
 
         <div className="bg-base-100 my-24 px-4 text-center">
           <div className="max-w-xl mx-auto">
-            <img src={desktop2} alt="" />
+            <img src={desktop2} />
           </div>
 
           <div className="prose mx-auto">
@@ -51,7 +52,7 @@ const Landing = () => {
 
         <div className="bg-base-100 my-24 px-4 text-center">
           <div className="max-w-xl mx-auto">
-            <img src={desktop2} alt="" />
+            <img src={desktop3} />
           </div>
 
           <div className="prose mx-auto">

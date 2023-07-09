@@ -13,7 +13,7 @@ const Landing = () => {
   return (
     <div className="max-w-5xl mx-auto">
       <div className="mx-auto lg:min-h-screen">
-        <div className="hero min-h-full bg-base-100 my-36">
+        <div className="hero min-h-full bg-base-100 mb-36 mt-24">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="">
               <img src={art} alt="A guy watching a movie" className="" />

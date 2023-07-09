@@ -40,7 +40,7 @@ const PrivateNavbar = ({ setUser }) => {
           </ul>
         </div>
         <div className="flex-1">
-          <Link to="/home" className="btn btn-ghost normal-case text-xl">M</Link>
+          <Link to="/home" className="btn btn-ghost normal-case text-xl">Pellicola</Link>
         </div>
         <div className="form-control">
           <input type="text" placeholder="Search" className="input input-bordered" />

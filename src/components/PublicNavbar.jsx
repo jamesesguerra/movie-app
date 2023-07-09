@@ -17,7 +17,7 @@ const PublicNavbar = () => {
           </div>
         </div>
         <div className="flex-1">
-          <Link to="/" className="btn btn-ghost normal-case text-xl">M</Link>
+          <Link to="/" className="btn btn-ghost normal-case text-xl">Pellicola</Link>
         </div>
         <div className="flex-2 mr-2">
           <Link className="btn btn-ghost" to="/login">Log-in</Link>

@@ -20,7 +20,7 @@ const Landing = () => {
             <div className="">
               <img src={art} alt="A guy watching a movie" />
             </div>
-            <div className="max-w-2xl mr-4 text-center lg:text-left">
+            <div className="max-w-2xl lg:mr-4 text-center lg:text-left">
               <h1 className="text-5xl font-bold">Pellicola</h1>
               <p className="py-6">Inspired by my love of film, Pellicola is a simple movie discovery app to help you hold a conversation with cinephiles who think they're better than everyone else.</p>
               <button className="btn btn-primary lg:mx-auto">

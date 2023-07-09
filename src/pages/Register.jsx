@@ -40,8 +40,8 @@ const Register = ({ setUser }) => {
     <div className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left max-w-2xl lg:mr-8">
-          <h1 className="text-5xl font-bold">Join lorem for free</h1>
-          <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+          <h1 className="text-5xl font-bold">Join Pellicola for free</h1>
+          <p className="py-6">Create a free account today. If your information is valid, you'll be logged in right away so you can start viewing movies that interest you.</p>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form className="card-body" onSubmit={formik.handleSubmit}>

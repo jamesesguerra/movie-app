@@ -2,7 +2,8 @@ const Footer = () => {
   return (
     <footer className="footer footer-center p-10 bg-primary text-primary-content">
       <div>
-        <p className="font-bold text-xl">Pellicola.</p> 
+        <p className="font-bold text-xl">Pellicola</p> 
+        <p className="font-bold text-md">Powered by TMDb API</p> 
         <p>made with ♡ by james esguerra</p>
       </div> 
       <div>

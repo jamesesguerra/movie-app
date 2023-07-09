@@ -22,8 +22,10 @@ const Landing = () => {
             </div>
             <div className="max-w-2xl mr-4 text-center lg:text-left">
               <h1 className="text-5xl font-bold">Pellicola</h1>
-              <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-              <button className="btn btn-primary lg:mx-auto">Get Started — it's free</button>
+              <p className="py-6">Inspired by my love of film, Pellicola is a simple movie discovery app to help you hold a conversation with cinephiles who think they're better than everyone else.</p>
+              <button className="btn btn-primary lg:mx-auto">
+                <a href="/register">Get Started — it's free</a>
+              </button>
             </div>
           </div>
         </div>
@@ -34,8 +36,8 @@ const Landing = () => {
           </div>
 
           <div className="prose mx-auto">
-            <h2 className="">It's like letterboxd except not really.</h2>
-            <p className="">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+            <h2 className="">It's like Letterboxd except not really</h2>
+            <p className="">Choose from a selection of movies that are currently popular, now showing, coming soon, and top-rated.</p>
           </div>
         </div>
 
@@ -45,8 +47,8 @@ const Landing = () => {
           </div>
 
           <div className="prose mx-auto">
-            <h2 className="">It's like letterboxd except not really.</h2>
-            <p className="">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+            <h2>The only information you need</h2>
+            <p>Scan through an overview of any movie while being recommended a list of similar movies.</p>
           </div>
         </div>
 
@@ -56,8 +58,8 @@ const Landing = () => {
           </div>
 
           <div className="prose mx-auto">
-            <h2 className="">It's like letterboxd except not really.</h2>
-            <p className="">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+            <h2 className="">Your digital film diary</h2>
+            <p className="">Create a list of movies with a certain theme to help you pick a movie to watch according to your current mood.</p>
           </div>
         </div>
 

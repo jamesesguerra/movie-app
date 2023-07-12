@@ -41,7 +41,7 @@ const Register = ({ setUser }) => {
       <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left max-w-2xl lg:mr-8">
           <h1 className="text-5xl font-bold">Join Pellicola for free</h1>
-          <p className="py-6">Create a free account today. If your information is valid, you'll be logged in right away so you can start viewing movies that interest you.</p>
+          <p className="py-6">Create a free account today. If your information is valid, we'll log you in right away so you can start viewing movies that interest you.</p>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form className="card-body" onSubmit={formik.handleSubmit}>
